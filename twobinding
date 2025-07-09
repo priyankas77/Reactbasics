@@ -1,0 +1,26 @@
+import React, { useState } from 'react'
+
+const App = () => {
+  const [username, setusername] = useState(' ')
+  const submithandler=(e)=>{
+  e.preventDefault()
+  console.log(username)
+  setusername(' ')
+  }
+  return (
+    <div><form onSubmit={(e)=>{
+      submithandler(e)
+    }} >
+      <input id="input" type="text" value={username}
+      onChange={(e)=>{
+        setusername(e.target.value)
+      }
+      }
+       />
+       <button id="btn"> Submit </button>
+    </form>
+
+    </div>
+    
+  )
+}
